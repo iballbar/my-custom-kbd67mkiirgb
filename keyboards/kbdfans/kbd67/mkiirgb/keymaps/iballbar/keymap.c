@@ -41,13 +41,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		[_LAYER1] = LAYOUT_65_ansi_blocker( /* FN */
 			KC_GESC,       KC_F1,    KC_F2,   KC_F3,  KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,  KC_F12,  KC_DEL,   KC_HOME,\
 		    KC_TRNS,       RGB_TOG,  RGB_SPI, KC_TRNS,KC_TRNS, RGB_VAI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR,  KC_SLCK, KC_PAUS, RESET,    KC_PGUP,\
-			CTL_T(KC_CAPS),RGB_RMOD, RGB_SPD, RGB_MOD,RGB_HUD, RGB_VAD, RGB_HUI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,          EEP_RST,  KC_PGDN,\
+	        CTL_T(KC_CAPS),RGB_RMOD, RGB_SPD, RGB_MOD,RGB_HUD, RGB_VAD, RGB_HUI, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,          EEP_RST,  KC_PGDN,\
 		    KC_LSFT,       STT_GRADIENT_PRESETS,  STT_REFLECTED_GRADIENT, STT_GRADIENT_FLIP,KC_TRNS, KC_TRNS, AG_NORM, AG_SWAP, RGB_SAD, RGB_SAI, KC_TRNS,  KC_MPLY,          KC_VOLU,  KC_MUTE,\
 		    KC_TRNS,       KC_TRNS,    KC_TRNS,                  KC_TRNS,                   KC_TRNS,          KC_TRNS,           KC_BRID, KC_VOLD,  KC_BRIU),
         [_LAYER2] = LAYOUT_65_ansi_blocker( /* MOUSE */
 			KC_GESC,       KC_F1,    KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11,   KC_F12,  KC_DEL,   KC_CALC,\
-            KC_CAPS,       KC_BTN1,  KC_MS_U, KC_BTN2, KC_WH_U, STT_G0_HUD,  STT_G0_HUI, STT_G0_SAD, STT_G0_SAI, STT_G0_VAD, STT_G0_VAI,  KC_SLCK,  KC_PAUS, RESET,    KC_MYCM,\
-            KC_TRNS,       KC_MS_L,  KC_MS_D, KC_MS_R, KC_WH_D, STT_G100_HUD,  STT_G100_HUI, STT_G100_SAD, STT_G100_SAI, STT_G100_VAD, STT_G100_VAI,  KC_TRNS,           EEP_RST,  KC_HOME,\
+            KC_TAB,        KC_BTN1,  KC_MS_U, KC_BTN2, KC_WH_U, STT_G0_HUD,  STT_G0_HUI, STT_G0_SAD, STT_G0_SAI, STT_G0_VAD, STT_G0_VAI,  KC_SLCK,  KC_PAUS, RESET,    KC_MYCM,\
+            CTL_T(KC_CAPS),KC_MS_L,  KC_MS_D, KC_MS_R, KC_WH_D, STT_G100_HUD,  STT_G100_HUI, STT_G100_SAD, STT_G100_SAI, STT_G100_VAD, STT_G100_VAI,  KC_TRNS,           EEP_RST,  KC_HOME,\
             KC_LSFT,       RGB_TOG,  RGB_MOD, RGB_VAI, RGB_VAD, STT_GRADIENT_PRESETS,  STT_REFLECTED_GRADIENT, STT_GRADIENT_FLIP, RGB_HUD, KC_TRNS, KC_TRNS,  KC_MPLY,           KC_VOLU,  KC_MUTE,\
             KC_TRNS,       KC_TRNS,  KC_TRNS,                   KC_TRNS,                   KC_TRNS,          KC_TRNS,            KC_MPRV, KC_VOLD,  KC_MNXT),
 
@@ -88,6 +88,7 @@ STT_CUSTOM_PRESETS stt_gradient_presets[] = {
     {{212, 0, 0}, {223, 235, 165}, true },
 };
 uint8_t stt_gp_length = sizeof(stt_gradient_presets)/sizeof(stt_gradient_presets[0]);
+
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
@@ -176,6 +177,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return true;
 }
+
 
 // void rgb_matrix_indicators_user(void) {
 //     //

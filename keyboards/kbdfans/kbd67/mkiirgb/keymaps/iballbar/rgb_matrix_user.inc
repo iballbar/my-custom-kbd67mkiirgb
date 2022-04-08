@@ -2,14 +2,14 @@
 // RGB_MATRIX_EFFECT(solid_multiresplash)
 /*   Custom gradient that can be tweaked by keycodes
 ...........................................................*/
-RGB_MATRIX_EFFECT(STT_CUSTOM_GRADIENT)
-RGB_MATRIX_EFFECT(STT_CUSTOM_GRADIENT_SPLASH)
+//RGB_MATRIX_EFFECT(STT_CUSTOM_GRADIENT)
+//RGB_MATRIX_EFFECT(STT_CUSTOM_GRADIENT_SPLASH)
 RGB_MATRIX_EFFECT(STT_WIDE_RAINBOW_GRADIENT)
 RGB_MATRIX_EFFECT(wide_rainbow_splash)
 
 #ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
 
-#include "effects/stt_custom_gradient.c"
+//#include "effects/stt_custom_gradient.c"
 #include "effects/stt_wide_rainbow_gradient.c"
 
 HSV resplash_math(HSV hsv, int16_t dx, int16_t dy, uint8_t dist, uint16_t tick) {
@@ -44,6 +44,7 @@ HSV resplash_math(HSV hsv, int16_t dx, int16_t dy, uint8_t dist, uint16_t tick) 
 //     return led_max < DRIVER_LED_TOTAL;
 // }
 
+
 bool effect_runner_rainbow_splash(uint8_t start, effect_params_t* params){
     RGB_MATRIX_USE_LIMITS(led_min, led_max);
 
@@ -68,6 +69,8 @@ bool effect_runner_rainbow_splash(uint8_t start, effect_params_t* params){
     return led_max < DRIVER_LED_TOTAL;
 }
 
+
+/*
 bool effect_runner_gradient_splash(uint8_t start, effect_params_t* params){
     RGB_MATRIX_USE_LIMITS(led_min, led_max);
 
@@ -91,6 +94,7 @@ bool effect_runner_gradient_splash(uint8_t start, effect_params_t* params){
     }
     return led_max < DRIVER_LED_TOTAL;
 }
+*/
 
 // bool solid_resplash(effect_params_t* params) {
 //     return effect_runner_reactive_resplash(qsub8(g_last_hit_tracker.count, 1), params, &solid_resplash_math);
@@ -100,12 +104,15 @@ bool effect_runner_gradient_splash(uint8_t start, effect_params_t* params){
 //     return effect_runner_reactive_resplash(0, params, &solid_resplash_math);
 // }
 
+
 bool wide_rainbow_splash(effect_params_t* params) {
     return effect_runner_rainbow_splash(qsub8(g_last_hit_tracker.count, 1), params);
 }
 
+/*
 static bool STT_CUSTOM_GRADIENT_SPLASH(effect_params_t* params) {
     return effect_runner_gradient_splash(qsub8(g_last_hit_tracker.count, 1), params);
 }
+*/
 
 #endif  // RGB_MATRIX_CUSTOM_EFFECT_IMPLS
